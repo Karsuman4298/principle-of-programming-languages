@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+int prt , time , rate =15;
+float si;
+
+    cout << "enter the principle value"<< endl;
+    cin>>prt;
+    cout << "enter the time interval in months :\n"<< endl;
+    cin>>time;
+
+    si=prt*rate*time/100;
+
+    cout<<"the simple intrest is: "<<si<< "  for time inerval "<<time<<" months";
+    return 0;
+}
