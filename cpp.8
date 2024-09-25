@@ -1,0 +1,52 @@
+//Write a c program to copy, concatenate and compare two strings without using header file.
+#include <stdio.h>
+void copy(char dest[], const char initial[]) {
+    int i = 0;
+    while (initial[i] != '\0') {
+        dest[i] = initial[i];
+        i++;
+    }
+    dest[i] = '\0';
+}
+void concat(char dest[], const char initial[]) {
+    int i = 0, j = 0;
+    while (dest[i] != '\0') {
+        i++;
+    }
+    while (initial[j] != '\0') {
+        dest[i] = initial[j];
+        i++;
+        j++;
+    }
+    dest[i] = '\0';
+}
+int comp(const char str1[], const char str2[]) {
+    int i = 0;
+    while (str1[i] != '\0' && str2[i] != '\0') {
+        if (str1[i] != str2[i]) {
+            return str1[i] - str2[i];
+        }
+        i++;
+    }
+    return str1[i] - str2[i];
+}
+int main() {
+    char str1[100], str2[100], result[200];
+    printf("Enter first string: ");
+    gets(str1);
+    printf("Enter second string: ");
+    gets(str2);
+    copy(result, str1);
+    printf("Copy of first string: %s\n", result);
+    concat(result, str2);
+    printf("Concatenation of strings: %s\n", result);
+    int comparison = comp(str1, str2);
+    if (comparison == 0) {
+        printf("Strings are equal.\n");
+    } else if (comparison < 0) {
+        printf("First string is less than the second string.\n");
+    } else {
+        printf("First string is greater than the second string.\n");
+    }
+    return 0;
+}
