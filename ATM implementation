@@ -44,7 +44,7 @@ public:
         cin>>p;
         l1:
         if(p==pin){
-            while(1) {
+            while(p) {
                 int c;
                 cout<<"1.Withdraw"<<endl<<"2.View Balance"<<endl<<"3.Transfer"<<endl<<"4.Exit"<<endl<<"Enter Choice:";
                 cin>>c;
@@ -63,11 +63,13 @@ public:
                         exit(0);
                     default:
                         cout<<"ERROR!"<<endl;
+                        break;
                 }
             }
         }
         else{
             cout<<"Wrong pin. Try again!";
+            
             goto l1;
         }
     }
@@ -80,9 +82,5 @@ int main(){
     a.display();
     a.pin_();
 }
-};
-int main(){
-    ATM a;
-    a.display();
-    a.pin_();
-}
+
+
