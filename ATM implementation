@@ -1,4 +1,6 @@
-//Write a c++ program to implement ATM management system.
+/*Write a c++ program to implement ATM management system./*
+
+
 #include<iostream>
 using namespace std;
 class ATM{
